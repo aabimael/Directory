@@ -1,0 +1,172 @@
+<h1>Mostrar Persona</h1>
+
+<table align="center">
+  <tr>
+    <td valign="top">
+      <fieldset>
+        <legend>Personales</legend>
+        <div id="personales" style="display:none; background:#DCDDDE; border:1px solid #808285; text-align:left;">
+          <table>
+            <tr>
+              <td align="left"><label>Nombre:</label></td>
+              <td align="left"><%=h @persona.nombres %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Paterno:</label></td>
+              <td align="left"><%=h @persona.a_paterno %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Materno:</label></td>
+              <td align="left"><%=h @persona.a_materno %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Fecha Nacimiento:</label></td>
+              <td align="left"><%=h @persona.dia_cumple %>/<%=h @persona.mes_cumple %>/<%=h @persona.anio_cumple %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Empresa:</label></td>
+              <td align="left"><%=h @persona.empresa %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Cargo:</label></td>
+              <td align="left"><%=h @persona.cargo %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Nacionalidad:</label></td>
+              <td align="left"><%=h @persona.nacionalidad %></td>
+            </tr>
+          </table>
+        </div>
+      </fieldset>
+
+      <br/>
+
+    </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td  valign="top">
+      <fieldset>
+        <legend>Tel&eacute;fonos</legend>
+        <div id="telefonos" style="display:none; background:#DCDDDE; border:1px solid #808285; text-align:left;">
+          <table>
+            <tr>
+              <td align="left"><label>Casa:</label></td>
+              <td align="left"><%=h @persona.tel_particular %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Oficina:</label></td>
+              <td align="left"><%=h @persona.tel_oficina %> ext: <%= @persona.tel_oficina_ext %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Movil:</label></td>
+              <td align="left"><%=h @persona.tel_movil %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Fax:</label></td>
+              <td align="left"><%=h @persona.tel_fax %></td>
+            </tr>
+          </table>
+        </div>
+      </fieldset>
+      <br/>
+      <fieldset>
+        <legend>Direcci&oacute;n</legend>
+        <div id="direcciones" style="display:none; background:#DCDDDE; border:1px solid #808285; text-align:left;">
+          <table>
+            <tr>
+              <td align="left"><label>Calle:</label></td>
+              <td align="left"><%=h @persona.direc_calle %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Ext.:</label></td>
+              <td align="left"><%=h @persona.direc_ext %> &nbsp;&nbsp;
+                <label>Int.:</label><%=h @persona.direc_int %>&nbsp;&nbsp;
+                <label>Piso:</label><%=h @persona.direc_piso %>
+              </td>
+            </tr>
+            <tr>
+              <td align="left"><label>Col.:</label></td>
+              <td align="left"><%=h @persona.direc_colonia %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>C.P.:</label></td>
+              <td align="left"><%=h @persona.direc_cp %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Del./Mun.:</label></td>
+              <td align="left"><%=h @persona.direc_delegacion %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Estado:</label></td>
+              <td align="left"><%=h @persona.direc_estado %></td>
+            </tr>
+          </table>
+        </div>
+      </fieldset>
+
+    </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">
+      <fieldset>
+        <legend>Otros</legend>
+        <div id="otros" style="display:none; background:#DCDDDE; border:1px solid #808285; text-align:left;">
+          <table>
+            <tr>
+              <td align="left"><label>E-mail:</label></td>
+              <td align="left"><%=h @persona.email %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>E-mail Trabajo:</label></td>
+              <td align="left"><%=h @persona.email_trabajo %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Pag Web:</label></td>
+              <td align="left"><%=h @persona.pag_web %></td>
+            </tr>
+            <tr>
+              <td align="left"><label>Asistente:</label></td>
+              <td align="left"><%=h @persona.asistente %></td>
+            </tr>
+            <tr>
+              <td align="left" valign="top"><label>Notas:</label></td>
+              <td align="left"><%=h @persona.notas %></td>
+            </tr>
+            <tr>
+              <td align="left"><label></label></td>
+              <td align="left"></td>
+            </tr>
+          </table>
+        </div>
+      </fieldset>
+    </td>
+  </tr>
+
+</table>
+
+<script>
+  //$('personales').appear()
+  //Effect.BlindDown('personales', { duration: 3.0 });
+  Effect.Grow('personales', {direction: 'top-left', duration: 3.0   });
+  Effect.Grow('telefonos', {direction: 'top-left', duration: 3.0   });
+  Effect.Grow('direcciones', {direction: 'top-left', duration: 3.0   });
+  Effect.Grow('otros', {direction: 'top-left', duration: 3.0   });
+</script>
+
+
+
+<br/>
+<br/>
+
+<%= link_to 'Editar', edit_persona_path(@persona) %> |
+<%= link_to 'Búsqueda', personas_path %>
+<% if (@nombre_link != '') or (@tel_link != '') or (@empresa_link != '') %>
+  |
+  <%= link_to 'Regresar', :controller => 'personas', :action => 'index', :busca_nombre => @nombre_link,
+    :busca_tel => @tel_link,
+    :busca_empresa => @empresa_link%>
+<% end %>
+
+<br/>
+<br/>
+
+
+

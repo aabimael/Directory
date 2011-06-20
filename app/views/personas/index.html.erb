@@ -1,0 +1,102 @@
+<h1>Listado de Personas</h1>
+
+<% form_tag controller_name, :method => :get do %>
+  <table align="center" id="busqueda">
+    <tr>
+      <td><b>Nombre:</b></td>
+      <td><%= text_field_tag  :busca_nombre, nil%></td>
+    </tr>
+    <tr>
+      <td><b>Tel&eacute;fono:</b></td>
+      <td><%= text_field_tag  :busca_tel, nil%></td>
+    </tr>
+    <tr>
+      <td><b>Empresa:</b></td>
+      <td><%= text_field_tag  :busca_empresa, nil%></td>
+    </tr>
+
+  </table>
+  <br/>
+
+  <%= submit_tag "Buscar"  %>
+<% end %>
+
+<br/>
+<br/>
+<table align="center" class="resultados" >
+  <% if !@personas.empty? %>
+    <tr>
+      <th>Personales</th>
+      <th>Tel&eacute;fonos</th>
+      <th>Email</th>
+      <th>Pag. web</th>
+      <th>Nacionalidad</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  <% end %>
+  <% @personas.each do |persona| %>
+    <tr>
+      <td valign="top">
+        <% identificador = 'personales_' + persona.id.to_s  %>
+        <% ident_tels = 'personales_tels_' + persona.id.to_s %>
+        <%=h persona.nombres %>
+        <%=h persona.a_paterno %>
+        <%=h persona.a_materno %>
+        <a href="#" onclick="$(<%= "'" + identificador + "'"%>).appear(); return false;" >Ver</a>
+        <div <%= 'id="' + identificador + '"'%> style="display:none; background:#DCDDDE; border:1px solid #808285; text-align:left;">
+          <label>Cargo:</label>
+          <%=h persona.cargo %>
+          <br/>
+          <label>Empresa:</label>
+          <%=h persona.empresa %>
+          <br/>
+          <label>F. Nacimiento:</label>
+          <%=h persona.dia_cumple %>/<%=h persona.mes_cumple %>/<%=h persona.anio_cumple %>
+          <a href="#" onclick="new Effect.Fade(<%= "'" + identificador + "'"%>); return false;">Ocultar</a>
+        </div>
+      </td>
+      <td valign="top">
+        <label>Oficina:</label> <%=h persona.tel_oficina %> ext: <%= persona.tel_oficina_ext %>
+        <a href="#" onclick="$(<%= "'" + ident_tels + "'"%>).appear(); return false;" >Ver</a>
+        <div <%= 'id="' + ident_tels + '"'%> style="display:none; background:#DCDDDE; border:1px solid #808285; text-align:left;">
+          <label>Casa:</label> <%=h persona.tel_particular %>
+          <br/><label>Movil:</label> <%=h persona.tel_movil %>
+          <br/><label>Fax:</label> <%=h persona.tel_fax %>
+          <a href="#" onclick="new Effect.Fade(<%= "'" + ident_tels + "'"%>); return false;">Ocultar</a>
+        </div>
+      </td>
+      <td valign="top"><%=h persona.email %></td>
+      <td valign="top"><%=h persona.pag_web %></td>
+      <td valign="top"><%=h persona.nacionalidad %></td>
+      <td>
+        <%= link_to 'Mostrar', :controller => 'personas', :action => 'show',
+          :id => persona.id, :nombre_link => @nombre_link,
+          :tel_link => @tel_link, :empresa_link => @empresa_link %>
+      </td>
+      <td>
+  <%#= link_to 'Editar', edit_persona_path(persona) %>
+        <%= link_to 'Editar', :controller => 'personas', :action => 'edit',
+          :id => persona.id, :nombre_link => @nombre_link,
+          :tel_link => @tel_link, :empresa_link => @empresa_link %>
+      </td>
+      <td>
+
+        <%#= link_to 'EliminarBueno', persona, :confirm => '¿Está usted segura(o)?',
+  :method => :delete %>
+
+        <%= link_to 'Eliminar',
+          {:controller => 'personas', :action => 'prueba', :id => persona.id, :nombre_link => @nombre_link, :tel_link => @tel_link,
+          :empresa_link => @empresa_link}, :onclick => "return confirm('¿Está usted segura(o)?');"
+          %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'Agregar', new_persona_path %>
+<br/>
+<br/>

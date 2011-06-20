@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=ISO-8859-1"/>
+    <!--windows-1252 -->
+    <title><%= controller.controller_name %></title>
+    <%= javascript_include_tag "prototype" %>
+    <%= javascript_include_tag "scriptaculous" %>
+    <%= javascript_include_tag "effects" %>
+    <%= javascript_include_tag "dragdrop" %>
+    <%= javascript_include_tag "application" %>
+    <%#= javascript_include_tag "cebra" %>
+    <%= stylesheet_link_tag 'reset-fonts-grids' %>
+    <%= stylesheet_link_tag 'scaffold' %>
+    <%= stylesheet_link_tag 'main' %>
+
+  </head>
+  <body>
+    <div id="doc3" class="yui-t1">
+      <div id="hd">
+        <div id="title">
+          
+          <!--div align="left" style="z-index:1; background-image:url(../images/AgendaLogo_root.png); width:180px; height:80px; margin-left:250px;">
+
+          </ div-->
+          <!-- <image src="images/ssp.png"/> -->
+          <h1>Agenda &nbsp;&nbsp;&nbsp;</h1>
+          <% if session[:user_id] %>
+            <div align="right" style="z-index:1;">
+              <%= session[:user_id] %>
+              &nbsp;
+              <%= link_to "logout",{:controller => "secure", :action => "logout"},
+                :style => "color:blue; font-weight:normal; font-size:x-small;"%>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+          <% end %>
+          <div id="messages" style="text-align:center">
+            <p><%= flash[:notice] %></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div id="content" align="center">
+      <%= yield %>
+    </div>
+    <div id="ft">
+      &copy; 2009 AbiSoft&nbsp;&nbsp;&nbsp;
+    </div>
+  </body>
+</html>

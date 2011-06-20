@@ -1,0 +1,19 @@
+<h1>Ver</h1>
+<p>
+  <b>Login:</b>
+  <%=h @user.user_name %>
+</p>
+
+<p>
+  <b>Rol:</b>
+  <%=h @user.role %>
+</p>
+
+<br/>
+
+<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Regresar', users_path %>
+
+
+<br/>
+<br/>

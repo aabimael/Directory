@@ -1,0 +1,238 @@
+/*
+* Layout
+*/
+
+#document {
+    font-size: 120%;
+}
+html,body {
+    width: 100%;
+}
+body {
+    background-color: #AED1E6;
+    /*background: #FFFFFF url(../images/content_bg_root.png) repeat-x scroll 0 0;*/
+}
+
+div#title {
+    margin: 0;
+    padding: 0.5em;
+    /*background: url(../images/banner.png) repeat-x scroll 0 0;*/
+    color: #02225b;
+}
+
+#ft {
+    color: #02225B;
+    font-size:110%;
+    font-weight:bold;
+    margin-bottom:1em;
+    /*margin-top:0.4em;*/
+    padding:0.6em;
+    text-align:right;
+    text-transform:capitalize;
+    border-top: 3px solid #012660;
+}
+
+#main-menu {
+    margin: 0.5em;
+    border: 1px dashed gray;
+    background: white;
+    color: #FFFFFF;
+}
+
+#content {
+    width: 100%;
+    text-align: center;
+}
+
+#content h1{
+    font-weight: bold;
+    text-transform: capitalize;
+    /*background: url(../images/bg_root.png);
+    background: url(../images/bg.png) repeat-x scroll 0 0;*/
+    text-align: left;
+    padding: 0.6em;
+    color: #02225B;
+    font-size: 110%;
+    margin-top: 0.4em;
+    margin-bottom: 1em;
+    border-bottom: 3px solid #012660;
+}
+
+#bd {
+}
+
+#title h1 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 150%;
+    text-align: right;
+}
+
+#title h2 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 80%;
+    text-transform: capitalize;
+}
+
+#main-menu h3 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 100%;
+    text-transform: capitalize;
+    padding: 0.2em;
+    margin: 0 0 0.5em 0;
+    background: url(../images/stripe.png) repeat-x scroll 0 0;
+}
+
+li.selected {
+    background: #5094A5;
+    color: #FFFFFF;
+}
+
+#menu li {
+    text-align: left;
+    padding: 0.2em;
+}
+
+#menu {
+    margin-bottom: 100px;
+}
+
+#content a {
+    padding: 0.2em;
+    margin: 0.1em;
+}
+
+#content p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+table.checkboxes th {
+    color: white;
+    padding: 0.4em;
+    text-align: center;
+    background: url(../images/stripe.png) repeat-x scroll 0 0;
+    font-weight: bold;
+} 
+
+table.checkboxes tbody {
+    background: white;
+}
+
+table.checkboxes td {
+    padding: 0.4em;
+    text-align: left;
+}
+
+table.checkboxes {
+    margin-top: 1em;
+    margin-left:35%;
+    margin-right:35%;
+}
+table.checkboxes tr.par {
+    background: lightGray;
+}
+table.listing th {
+    color: white;
+    padding: 0.4em;
+    text-align: center;
+    background: url(../images/stripe.png) repeat-x scroll 0 0;
+    font-weight: bold;
+} 
+
+table.listing tbody {
+    background: white;
+}
+
+table.listing td {
+    padding: 0.4em;
+    text-align: right;
+}
+
+table.listing {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left:10%;
+    margin-right:10%;
+    width:80%;
+}
+table.listing tr.par {
+    background: lightGray;
+}
+
+table.data {
+    text-align: center;
+    border:black;
+    align: center;
+}
+
+table.data td {
+    text-align: left;
+}
+
+b.error {
+    color: white;
+    background-color: red
+}
+
+#errorExplanation {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom:5px;
+    padding-top:5px;
+    display:block;
+    position:relative;
+}
+
+#errorExplanation h2 {
+
+    visibility: collapse;
+    height: 0px;
+
+}
+
+#errorExplanation p {
+
+    visibility: hidden;
+    height: 0px;
+
+}
+.fieldWithErrors {
+    color: white;
+}
+
+label {
+    font-style:italic;
+}
+
+table.resultados {
+    border-collapse: collapse;
+    border: 1px #02225B solid;
+}
+
+table.resultados th {
+    font-size: 12px;
+    color: #02225B;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: bold;
+}
+
+table.resultados td,th {
+    border: 1px #02225B solid;
+}
+
+
+a:hover {
+    background-color: #58595B;
+}
+
+a {
+    color: #02225B;
+}
+
+fieldset {
+    border-color: #02225B;
+}
